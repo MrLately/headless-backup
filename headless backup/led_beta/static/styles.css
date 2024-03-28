@@ -1,0 +1,213 @@
+/* Default Styles */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    /* Add responsive adjustments */
+    @media (max-width: 767px) {
+        padding: 10px;
+    }
+}
+
+body {
+    background-color: #a2b1db;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.parameter-container {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    /* Add responsive adjustments */
+    @media (max-width: 767px) {
+	margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+/* Change the font size of the labels */
+.parameter-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 22px; /* You can adjust the font size to your preference */
+    /* Add responsive adjustments */
+    @media (max-width: 767px) {
+        font-size: 22px;
+    }
+}
+
+/* Custom styles for range sliders */
+.parameter-container input[type="range"] {
+    width: 100%;
+    /* Customize the colors of the slider track and thumb */
+    background-color: #063df1; /* Set the track color */
+    border-color: #063df1; /* Set the thumb color */
+    cursor: pointer;
+}
+
+/* Custom styles for the "Choose Color" button */
+.parameter-container.center input[type="color"] {
+    width: 20%;
+    height: 50px; /* Adjust the height to make the button bigger */
+    font-size: 22px; /* Adjust the font size to your preference */
+    /* Add rounded corners */
+    border-radius: 10px;
+    cursor: pointer;
+    
+    /* Add responsive adjustments */
+    @media (max-width: 767px) {
+        height: 75px;
+        width: 30%;
+        font-size: 18px;
+    }
+}
+
+/* Custom styles for the buzzer toggle */
+.parameter-container.center input[type="checkbox"] {
+    transform: scale(2); /* Adjust the scale factor to make the toggle larger */
+    margin-top: 10px; /* Add some space between the button and label */
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    /* Add responsive adjustments */
+    @media (max-width: 767px) {
+        transform: scale(3);
+        margin-top: 20px; /* Increase margin for mobile */
+	margin-bottom: 20px;
+    }
+}
+
+/* Custom styles for the radio buttons */
+.parameter-container.center input[type="radio"] {
+    transform: scale(2); /* Adjust the scale factor to make the radio buttons larger */
+    margin-top: 10px; /* Add some space between the button and label */
+    margin-bottom: 10px;
+    margin-right: 40px;
+    margin-left: 40px;
+    cursor: pointer;
+
+    /* Add responsive adjustments */
+    @media (max-width: 767px) {
+        transform: scale(3);
+        margin-top: 20px; /* Increase margin for mobile */
+	    margin-bottom: 20px;
+        margin-right: 60px;
+        margin-left: 60px;
+    }
+}
+
+/* Custom styles for the hidden span elements */
+.parameter-container span {
+    display: inline-block;
+    margin-top: 5px;
+    visibility: visable; /* Hide the span elements */
+  }  
+
+.radio-container {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#start-button {
+    padding: 15px 30px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: green;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px; /* Add rounded corners */
+    
+    /* Add responsive adjustments */
+    @media (max-width: 767px) {
+        width: 30%;
+        height: 100px;
+        padding: 20px;
+        font-size: 40px;
+    }
+}
+
+#start-button.active {
+    background-color: red;
+}
+
+.counter-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Custom styles for the counter label */
+.counter-container label {
+    font-size: 28px; /* Change the font size to your preference */
+    font-weight: bold; /* Set the font weight to bold */
+    color: #000000; /* Change the font color if needed */
+    /* Add responsive adjustments */
+    @media (max-width: 767px) {
+        font-size: 24px;
+    }
+}
+
+#counter-value {
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+}
+
+.made-with-love {
+    text-align: center;
+    margin-top: 5px;
+    font-size: 18px;
+    color: #666;
+}
+
+/* Center the labels */
+.center-label {
+    text-align: center;
+}
+
+/* Center the sections */
+.center {
+    text-align: center;
+}
+
+/* Style for the container of the "Focus" button */
+.focus-button-container {
+    text-align: center;
+    margin-top: 10px; /* Adjust the margin as needed */
+}
+
+/* Style for the "Focus" button */
+#focus-button {
+    padding: 12px 25px; /* Adjust padding as needed */
+    font-size: 22px; /* Adjust font size as needed */
+    background-color: #ffcc00; /* Adjust background color as needed */
+    color: #fff; /* Adjust text color as needed */
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 10px; /* Add rounded corners */
+
+    /* Add responsive adjustments */
+    @media (max-width: 767px) {
+        width: 25%; /* Adjust width to make the button wider */
+        padding: 20px;
+        font-size: 40px;
+        margin-top: 20px;
+        margin-bottom: 22px;
+        display: block; /* Change display to block to center the button */
+        margin-left: auto; /* Center the button horizontally */
+        margin-right: auto; /* Center the button horizontally */
+    }
+}

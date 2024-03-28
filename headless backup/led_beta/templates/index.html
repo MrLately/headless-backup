@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kellys Light Bar</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.50">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Kellys Light Bar</h1>
+
+        <div class="parameter-container">
+            <label for="brightness-slider" class="center-label">Brightness</label>
+            <input type="range" id="brightness-slider" min="0.1" max="1" value="{{ params.brightness }}" step="0.1">
+            <span id="brightness-value">{{ params.brightness }}</span>
+        </div>
+
+        <div class="parameter-container">
+            <label for="block-size-slider" class="center-label">Block Size</label>
+            <input type="range" id="block-size-slider" min="1" max="3" value="{{ params.block_size }}" step="1">
+            <span id="block-size-value">{{ params.block_size }}</span>
+        </div>
+
+        <div class="parameter-container">
+            <label for="blink-wait-slider" class="center-label">Blink Speed</label>
+            <input type="range" id="blink-wait-slider" min="0.25" max="3" value="{{ params.blink_wait }}" step="0.01">
+            <span id="blink-wait-value">{{ params.blink_wait }}</span>
+        </div>
+
+        <div class="parameter-container">
+            <label for="slide-wait-slider" class="center-label">Slide Speed</label>
+            <input type="range" id="slide-wait-slider" min="0.0001" max="0.01" value="{{ params.slide_wait }}" step="0.0001">
+            <span id="slide-wait-value">{{ params.slide_wait }}</span>
+        </div>
+
+        <div class="parameter-container">
+            <label for="buzzer-wait-slider" class="center-label">Buzzer Speed</label>
+            <input type="range" id="buzzer-wait-slider" min="0.25" max="3" value="{{ params.buzzer_wait }}" step="0.01">
+            <span id="buzzer-wait-value">{{ params.buzzer_wait }}</span>
+        </div>
+
+        <div class="parameter-container center">
+            <label>Animation Type</label>
+            <div class="radio-container">
+                <label for="animation-type-blink">Blink</label>
+                <input type="radio" name="animation-type" id="animation-type-blink" value="blink" {% if params.selected_animation == "blink" %}checked{% endif %}>
+            </div>
+            <div class="radio-container">
+                <label for="animation-type-slide">Slide</label>
+                <input type="radio" name="animation-type" id="animation-type-slide" value="slide" {% if params.selected_animation == "slide" %}checked{% endif %}>
+            </div>
+            <div class="radio-container">
+                <label for="animation-type-attent">Attent</label>
+                <input type="radio" name="animation-type" id="animation-type-attent" value="attent" {% if params.selected_animation == "attent" %}checked{% endif %}>
+            </div>
+            <div class="radio-container">
+                <label for="animation-type-buzzer">Buzzer</label>
+                <input type="radio" name="animation-type" id="animation-type-buzzer" value="buzzer" {% if params.selected_animation == "buzzer" %}checked{% endif %}>
+            </div>
+        </div>
+
+        <div class="parameter-container center">
+            <label for="buzzer-toggle">Use Buzzer</label>
+            <div class="toggle-container">
+                <input type="checkbox" id="buzzer-toggle" {% if params.use_buzzer %}checked{% endif %}>
+                <label for="buzzer-toggle" class="toggle-label"></label>
+            </div>
+        </div>
+
+        <div class="parameter-container center">
+            <label for="color-button">Choose Color</label>
+            <input type="color" id="color-button" value="{{ params.color }}">
+        </div>
+
+        <div class="counter-container center">
+            <label for="counter-value">Counter:</label>
+            <span id="counter-value">0</span>
+          </div>
+
+        <div class="button-container">
+            <!-- Update the button element with the conditional class and text -->
+            <button id="start-button" {% if animation_running %}class="active"{% endif %}>
+                {% if animation_running %}Stop{% else %}Start{% endif %}
+            </button>
+        </div>
+        <div class="focus-button-container">
+            <button id="focus-button">Focus</button>
+        </div>    
+    </div>
+    <div class="made-with-love center">Made with &#x2764;</div>
+
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
